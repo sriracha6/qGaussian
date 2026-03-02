@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Galton Board — Matter.js</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <div id="controls">
+      <h2>Galton Board (Matter.js)</h2>
+      <label>Peg layout:
+        <select id="pegLayout">
+          <option value="triangle">Triangular grid</option>
+          <option value="rect">Rectangular grid</option>
+        </select>
+      </label>
+      <label>Peg semi-minor (b): <input id="pegB" type="range" min="4" max="24" value="8"></label>
+      <label>Peg eccentricity (e, 0-0.95): <input id="pegE" type="range" min="0" max="0.95" step="0.01" value="0.6"></label>
+      <label>Ball radius: <input id="ballRadius" type="range" min="2" max="8" value="4"></label>
+      <label>Spawn count: <input id="spawnCount" type="number" min="1" max="5000" value="200"></label>
+      <div class="buttons">
+        <button id="spawnBtn">Spawn</button>
+        <button id="startBtn">Start</button>
+        <button id="pauseBtn">Pause</button>
+        <button id="resetBtn">Reset</button>
+      </div>
+      <div id="stats"></div>
+      <p class="small">Uses <a href="https://brm.io/matter-js/" target="_blank">Matter.js</a> (CDN)</p>
+    </div>
+    <div id="canvas-wrap">
+      <canvas id="board"></canvas>
+      <canvas id="hist"></canvas>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
